@@ -11,7 +11,15 @@ export default defineConfig({
     target: ['ES2015'],
     lib: {
       name: "@gwinkamp/k6-tools",
-      entry: globSync("./src/**/*(*.ts|*.js)"),
+      entry: globSync(
+        "./src/**/*(*.ts|*.js)",
+        {
+          ignore: [
+            "./src/**/*.test.ts",
+            "./src/**/*.test.js"
+          ]
+        }
+      ),
       formats: ["es"],
     },
     rollupOptions: {
