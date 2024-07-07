@@ -75,6 +75,18 @@ export default function() {
 }
 ```
 
+### k6 utils
+
+All methods from the [k6-util](https://grafana.com/docs/k6/latest/javascript-api/jslib/utils/) library are also available. For example:
+
+```javascript
+import { randomString } from "@gwinkamp/k6-tools"
+
+export default function() {
+  console.log(randomString(10));
+}
+```
+
 ## Contribution
 
 Freely. I am always glad to have suggestions

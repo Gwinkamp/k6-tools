@@ -19,6 +19,8 @@ export default defineConfig({
       output: {
         dir: path.resolve(__dirname, "dist"),
         format: "esm",
+        preserveModules: true,
+        preserveModulesRoot: 'src'
       },
     },
     sourcemap: true,
@@ -44,9 +46,7 @@ export default defineConfig({
       ],
     }),
     nodeResolve(),
-    dts({
-      outDir: './dist/types',
-    }),
+    dts(),
   ],
   esbuild: {
     loader: "ts",
